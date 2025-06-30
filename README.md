@@ -16,7 +16,7 @@
 ### Запуск бэкенда:
 1. Установить все зависимости (poetry install)
 2. Создать .env файл с кофигурацией:
-   '''bash
+   
    DB_URL=postgresql+asyncpg://user:password@localhost/dbname
    SECRET_KEY=your-secret-key
    ALGORITHM=HS256
@@ -29,7 +29,7 @@
 
 
 ### Запуск фронта:
-   '''bash
+   
    -cd frontend
    -cd vite-project
    npm install
@@ -39,13 +39,9 @@
     
 🌐 API Endpoints (основные)
 POST /auth/register - регистрация
-
 POST /auth/login - авторизация
-
 GET /products - список товаров
-
 POST /orders - создание заказа
-
 GET /orders/history - история заказов
 
 (Полный список endpoints смотрите в Swagger)
