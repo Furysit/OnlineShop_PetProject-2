@@ -1,0 +1,77 @@
+.admin-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.admin-form input,
+.admin-form textarea {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.admin-form button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-products {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.admin-product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.admin-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.admin-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-actions button {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-actions button:first-child {
+  background-color: #ffc107;
+  color: black;
+}
+
+.admin-actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+}

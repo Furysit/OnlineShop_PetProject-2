@@ -1,0 +1,57 @@
+/* Общие сбросы */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Тело страницы */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Корневой контейнер приложения */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Основной блок контента */
+.main {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  margin-top: 20px;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* Центровка текста по умолчанию */
+.text-center {
+  text-align: center;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}
