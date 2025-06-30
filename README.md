@@ -16,33 +16,32 @@
 ### Запуск бэкенда:
 1. Установить все зависимости (poetry install)
 2. Создать .env файл с кофигурацией:
-   
-   DB_URL=postgresql+asyncpg://user:password@localhost/dbname
-   SECRET_KEY=your-secret-key
-   ALGORITHM=HS256
+   - DB_URL=postgresql+asyncpg://user:password@localhost/dbname
+   - SECRET_KEY=your-secret-key
+   - ALGORITHM=HS256
 4. Запустить сервер:
-   -cd backend
-   -poetry run start
-Сервер будет доступен по адресу: http://localhost:8000
+   - cd backend
+   - poetry run start
+   - Сервер будет доступен по адресу: http://localhost:8000
 
 Документация API (Swagger/Redoc): http://localhost:8000/docs
 
 
 ### Запуск фронта:
    
-   -cd frontend
-   -cd vite-project
-   npm install
-   -npm run dev
+   - cd frontend
+   - cd vite-project
+   - npm install
+   - npm run dev
 
 ### БД подключать в .env(DB_URL) POSTGRESQL
     
-🌐 API Endpoints (основные)
-POST /auth/register - регистрация
-POST /auth/login - авторизация
-GET /products - список товаров
-POST /orders - создание заказа
-GET /orders/history - история заказов
+### 🌐 API Endpoints (основные)
+1. POST /auth/register - регистрация
+2. POST /auth/login - авторизация
+3. GET /products - список товаров
+4. POST /orders - создание заказа
+5. GET /orders/history - история заказов
 
 (Полный список endpoints смотрите в Swagger)
 
