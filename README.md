@@ -14,15 +14,13 @@
 - Poetry (для управления зависимостями)
 
 ### Запуск бэкенда:
-
-1. Перейти в папку `backend`:
-   cd backend
-   poetry run start
+   -cd backend
+   -poetry run start
 
 ### Запуск фронта:
-    cd frontend
-    cd vite-project
-    npm run dev
+    -cd frontend
+    -cd vite-project
+    -npm run dev
 
 ### БД подключать в .env(DB_URL) POSTGRESQL
     
