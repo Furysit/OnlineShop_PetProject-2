@@ -61,8 +61,16 @@ export default function Login() {
 
         <button type="submit">Войти</button>
       </form>
-
+      
       {error && <p className="error">{error}</p>}
+      <div className="login-links">
+      <p>
+        <a href="/ForgotPassword">Забыли пароль?</a>
+      </p>
+      <p>
+        Нет аккаунта? <a href="/Register">Зарегистрироваться</a>
+      </p>
+    </div>
     </div>
   );
 }

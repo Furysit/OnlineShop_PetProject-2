@@ -24,6 +24,18 @@ async def get_user_by_id(
         detail="Not found!"
     )
 
+async def get_user_by_email(
+          user_email: Annotated[str, Path],
+          session: AsyncSession = Depends(db_helper.scoprd_session_dependecy)
+) -> User:
+    user = await crud.get_user_by_email(session, user_email)
+    if user is not None:
+         return user
+    raise HTTPException(
+         status_code=status.HTTP_404_NOT_FOUND,
+         detail="User with this email does not exist."
+    )
+
 
 async def get_current_user(
         token: str = Depends(oauth2_scheme),

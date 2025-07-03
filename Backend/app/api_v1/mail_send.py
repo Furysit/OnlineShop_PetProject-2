@@ -1,4 +1,5 @@
 import smtplib
+from .mail_config import conf
 
 sender = "from@example.com"
 receiver = "to@example.com" 
@@ -8,36 +9,38 @@ def sendmessage(
     order_id: int,
     total: int
 ):
-    sender = "shop@mail.com"
-    receiver = "you@mailmug.net"  
+      
 
     subject = "Your Order Confirmation"
-    body = f"Hello, {username}!\n\nYour order #{order_id} has been successfully created.\nTotal price: {total}."
+    body = f"Hello!\n\nYour order #{order_id} has been successfully created.\nTotal price: {total}."
 
     message = f"""\
-From: {sender}
-To: {receiver}
-Subject: {subject}
+    From: {sender}
+    To: {receiver}
+    Subject: {subject}
 
-{body}
-"""
+    {body}
+    """
 
     with smtplib.SMTP("smtp.mailmug.net", 2525) as server:
         server.login("9ujuxusw3sw73dqn", "dbsysahqtlk4jkgm")
         server.sendmail(sender, receiver, message)
 
+
+
 def send_forgot_password(
         username: str,
-        user_id: int,
         user_email: str,
         token:str
 ):
+    # sender = "shop@mail.com"
+    # receiver = f"{user_email}"
     sender = "shop@mail.com"
-    receiver = f"{user_email}"
-
+    receiver = "you@mailmug.net"
     subject = "Password Reset"
-    body = f"""Hello, {username}!
+    body = f"""Hello!
 
+{user_email} ,
 We received a request to reset your password.
 Use the token below in the API /reset_password route:
 
@@ -56,5 +59,5 @@ Subject: {subject}
 """
 
     with smtplib.SMTP("smtp.mailmug.net", 2525) as server:
-        server.login("n12bdambb2iwtsba", "6l8dlqhkcgfigg6u")
+        server.login("9ujuxusw3sw73dqn", "dbsysahqtlk4jkgm")
         server.sendmail(sender, receiver, message)

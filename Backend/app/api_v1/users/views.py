@@ -1,11 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Body, Form, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from datetime import timedelta
 from app.core.models import db_helper, User
 from .schemas import UserCreate, UserOut
 from fastapi import status
 from . import crud
-from .dependecies import get_user_by_id, get_current_user
+from .dependecies import get_user_by_id, get_current_user, get_user_by_email
 from ..mail_send import send_forgot_password
 from .auth import create_forgot_password_token
 from sqlalchemy import delete
@@ -80,11 +80,13 @@ async def delete_user(
              summary="Сброс пароля",
             description="Сбрасывает пароль и отправляет JWT токен для смены пароля")
 async def forgot_password(
+    user_email: str = Query(..., description="Email пользователя"),
+    user: User = Depends(get_user_by_email),
     session: AsyncSession = Depends(db_helper.scoprd_session_dependecy),
-    user: User = Depends(get_user_by_id)
+    
 ) -> None:
     access_token_expires = timedelta(minutes=RESET_TOKEN_EXPIRE_MINUTES)
     token = create_forgot_password_token(data={"sub": str(user.id)},expires_delta=access_token_expires)
-    send_forgot_password(username=user.username, user_id=user.id, user_email=user.email, token=token)
+    send_forgot_password(username=user.username, user_email=user.email, token=token)
 
 

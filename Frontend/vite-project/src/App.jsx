@@ -8,6 +8,9 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import AdminPage from "./pages/AdminPage";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+
 
 export default function App() {
   
@@ -22,6 +25,9 @@ export default function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
+
         </Routes>
         <ToastContainer
         position="top-right"

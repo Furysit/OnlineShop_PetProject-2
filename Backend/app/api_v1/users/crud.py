@@ -43,6 +43,15 @@ async def get_user_by_id(
 ) -> User:
     return await session.get(User, user_id)
 
+async def get_user_by_email(
+        session: AsyncSession,
+        user_email: str
+) -> User:
+    stmt = select(User).where(User.email == user_email)
+    result = await session.execute(stmt)
+    user = result.scalar_one_or_none() 
+    return user
+
 async def delete_user(
           session: AsyncSession,
           user: User
